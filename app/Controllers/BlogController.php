@@ -16,6 +16,7 @@ class BlogController extends BaseController
      * */
     public function indexAction(){
 
+        print_r($this->getJsAssetsBundle());
     }
 
     /*

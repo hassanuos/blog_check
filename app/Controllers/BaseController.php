@@ -6,8 +6,10 @@ use Helpers\CommonHelper;
 
 class BaseController
 {
-    public function __construct(){
+    protected $commonHelper;
 
+    public function __construct(){
+        $this->commonHelper = new CommonHelper();
     }
 
     /*
@@ -15,8 +17,20 @@ class BaseController
      *
      * */
     public function basePath(){
-        $commonHelper = new CommonHelper();
-        return $commonHelper::getProjectBasePath();
+
+        return $this->commonHelper->getProjectBasePath();
+    }
+
+    public function getJsAssetsBundle(){
+        return $this->commonHelper->getJsAssets($this->basePath());
+    }
+
+    public function getCssAssetsBundle(){
+        return $this->commonHelper->getCssAssets($this->basePath());
+    }
+
+    public function getProjectFolder(){
+        return $this->commonHelper->getAbsolutePath($this->basePath());
     }
 
 }
