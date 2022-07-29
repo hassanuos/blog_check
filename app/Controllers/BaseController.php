@@ -7,6 +7,7 @@ use Helpers\CommonHelper;
 class BaseController
 {
     protected $commonHelper;
+    public $content;
 
     public function __construct(){
         $this->commonHelper = new CommonHelper();
@@ -17,7 +18,6 @@ class BaseController
      *
      * */
     public function basePath(){
-
         return $this->commonHelper->getProjectBasePath();
     }
 
@@ -31,6 +31,10 @@ class BaseController
 
     public function getProjectFolder(){
         return $this->commonHelper->getAbsolutePath($this->basePath());
+    }
+
+    public function getNavigationBar(){
+        return $this->commonHelper->getNavigations($this->basePath());
     }
 
 }

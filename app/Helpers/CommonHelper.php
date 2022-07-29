@@ -27,25 +27,25 @@ class CommonHelper
     }
 
     public function getJsAssets($basePath){
-        $basePath = $this->getAbsolutePath($basePath);
+
         $js = [
-            $basePath . '/Views/assets/js/bootstrap.min.js',
-            $basePath . '/Views/assets/js/jquery.min.js',
-            $basePath . '/Views/assets/js/script.js',
+            $basePath . '/app/Views/assets/js/bootstrap.min.js',
+            $basePath . '/app/Views/assets/js/jquery.min.js',
+            $basePath . '/app/Views/assets/js/script.js',
         ];
 
         $jsScript = array_map(function ($url) {
-            return '<script src="'.$url.'"></script>';
+            return '<script src="'.$url.'" type="text/javascript"></script>';
         }, $js);
 
         return $jsScript;
     }
 
     public function getCssAssets($basePath){
-        $basePath = $this->getAbsolutePath($basePath);
+
         $css = [
-            $basePath . '/Views/assets/css/bootstrap.min.css',
-            $basePath . '/Views/assets/css/style.css',
+            $basePath . '/app/Views/assets/css/bootstrap.min.css',
+            $basePath . '/app/Views/assets/css/style.css',
         ];
 
         $cssScript = array_map(function ($url) {
@@ -55,8 +55,7 @@ class CommonHelper
         return $cssScript;
     }
 
-    static function getNavigations(){
-        $basePath = self::getProjectBasePath();
+    public function getNavigations($basePath){
 
         $navigation = [
             [

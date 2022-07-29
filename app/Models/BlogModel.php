@@ -12,5 +12,7 @@ class BlogModel
     public function get(){
         //TODO get all data from the table based on limit and offset
 
+        return $this->query("select * from users")->fetchArray();
+
     }
 }

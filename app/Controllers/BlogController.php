@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Helpers\CommonHelper;
+use Models\BlogModel;
 
 class BlogController extends BaseController
 {
@@ -16,12 +17,14 @@ class BlogController extends BaseController
      * */
     public function indexAction(){
 
-        print_r($this->getJsAssetsBundle());
+        $blogPosts = new BlogModel();
+        print_r($blogPosts->get());exit();
+
     }
 
     /*
      * Function create post
-     * return type array []
+     * return type boolean (true / false)
      * */
     public function createAction(){
         return $this->basePath();
