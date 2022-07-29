@@ -2,7 +2,7 @@
 
 namespace Models\Migrations\Traits;
 
-trait BlogQueryBuilder
+trait BlogQueryBuilderTrait
 {
     public function query($query) {
         if (!$this->query_closed) {

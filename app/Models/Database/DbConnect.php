@@ -1,10 +1,12 @@
 <?php
 
-namespace Models\Migrations\Traits;
+namespace Models\Migrations\Database;
+
+use Models\Migrations\Traits\BlogQueryBuilderTrait;
 
 class DbConnect
 {
-    use BlogQueryBuilder;
+    use BlogQueryBuilderTrait;
 
     protected $connection;
     protected $query;

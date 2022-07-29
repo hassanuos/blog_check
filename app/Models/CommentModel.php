@@ -2,12 +2,11 @@
 
 namespace Models;
 
-use Models\Migrations\Traits\BlogQueryBuilder;
 
 class CommentModel
 {
     # presenter trait
-    use BlogQueryBuilder;
+    use \Models\Migrations\Traits\BlogQueryBuilderTrait;
 
     public function get(){
         //TODO get all data from the table based on limit and offset
