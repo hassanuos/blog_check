@@ -88,6 +88,22 @@ class CommonHelper
         return $navigation;
     }
 
+    public function limitChar($postDescription = '', $defaultLimit = 1000){
+
+        $postDescription = strip_tags($postDescription);
+
+        if (strlen($postDescription) > $defaultLimit) {
+            $stringCut = substr($postDescription, 0, $defaultLimit);
+            $endPoint = strrpos($stringCut, ' ');
+            $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+            $string .= '... <a href="/index.php/blog/post-details" target="_blank">Read More</a>';
+
+            return $string;
+        }
+
+        return $postDescription;
+    }
+
     public function getAbsolutePath($basePath){
         return $_SERVER['DOCUMENT_ROOT'] ."/". basename($basePath);
     }

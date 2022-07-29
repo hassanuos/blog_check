@@ -37,4 +37,16 @@ class BaseController
         return $this->commonHelper->getNavigations($this->basePath());
     }
 
+    public function getHomePage(){
+        return include PROJECT_PATH . "Views/home.php";
+    }
+
+    public function getHeader(){
+        include PROJECT_PATH . "Views/layout/header.php";
+    }
+
+    public function getFooter(){
+        include PROJECT_PATH . "Views/layout/footer.php";
+    }
+
 }

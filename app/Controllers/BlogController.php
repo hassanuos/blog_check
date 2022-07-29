@@ -16,10 +16,8 @@ class BlogController extends BaseController
      * return type array []
      * */
     public function indexAction(){
-
-        $blogPosts = new BlogModel();
-        print_r($blogPosts->get());exit();
-
+        $this->content = [];
+        return $this->getHomePage();
     }
 
     /*
